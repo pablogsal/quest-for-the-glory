@@ -33,7 +33,7 @@ class Heap(object):
     def __iter__(self):
         yield from self._values
 
-class ProtoSuperstring(collections.defaultdict):
+class ProtoSuperstringCollection(collections.defaultdict):
 
     def __init__(self,*args,**kwargs):
 
@@ -68,7 +68,7 @@ def minSuperstring(wordList):
     # more substrings to glue. The problem is that a given substring could be in our proto-superstring so when we
     # "glue" substring together we have to "trim" the common parts.
 
-    proto_superstrings = ProtoSuperstring(set)
+    proto_superstrings = ProtoSuperstringCollection(set)
 
     # Start with the empty string
 
@@ -118,6 +118,7 @@ class minSuperstringTest(unittest.TestCase):
 
     def test1(self):
         minSuperstringCheck(self,["suit","case","it"],8)
+        minSuperstringCheck(self,["suit","case","it",""],8)
     def test2(self):
         minSuperstringCheck(self,["suit","case","it","suitcase"],8)
         minSuperstringCheck(self,["case","suit","it","suitcase"],8)
