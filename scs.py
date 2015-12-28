@@ -70,8 +70,6 @@ def minSuperstring(wordList):
 
     proto_superstrings = ProtoSuperstring(set)
 
-    max_len = len("".join(wordList))
-
     # Start with the empty string
 
     proto_superstrings[0].add("")
